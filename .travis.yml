@@ -2,11 +2,11 @@ language: python
 dist: xenial
 sudo: True
 
-Python: 
+python: 
   - 3.7
 
 env:
-  global
+  global:
   - PIPENV_VENV_IN_PROJECT=1
   - PIPENV_IGNORE_VIRTUALENVS=1
 
@@ -14,5 +14,5 @@ install:
   - pip install pipenv
   - pipenv sync -d
 
-Script:
+script:
   - pipenv run flake8 .
